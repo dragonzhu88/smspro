@@ -1,0 +1,47 @@
+<!--<div style="width: 100%;height: 100%;">-->
+  <!--<div class="row">-->
+    <!--<app-header></app-header>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!--<div class="col col-2">-->
+      <!--<app-left-list></app-left-list>-->
+    <!--</div>-->
+
+    <!--<div class="col col-10">-->
+      <!--<div class="row">-->
+        <!--<app-date-table></app-date-table>-->
+      <!--</div>-->
+
+      <!--<div class="row">-->
+        <!--<app-msg-area></app-msg-area>-->
+      <!--</div>-->
+
+    <!--</div>-->
+  <!--</div>-->
+  <!--<nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>-->
+<!--</div>-->
+
+<nz-layout class="layout">
+  <app-header></app-header>
+  <div class="row" style="min-height: 50px;background: #e2e2e2">
+    <i nz-icon type="play-circle" theme="outline" style="margin-left: 50px"></i>
+    <i nz-icon type="pause-circle" theme="outline"></i>
+    <i nz-icon type="edit" theme="outline"></i>
+
+  </div>
+  <nz-content style="padding:0 50px;">
+    <nz-layout class="row" style="padding:24px 0; background: #fff">
+      <nz-content style="padding: 0 24px; min-height: 280px;">
+        <div class="ant-col-5">
+          <app-left-list></app-left-list>
+        </div>
+        <div class="ant-col-19">
+          <app-date-table></app-date-table>
+          <app-msg-area class="col-10"></app-msg-area>
+        </div>
+      </nz-content>
+    </nz-layout>
+    <nz-footer style="text-align: center;">You have {{sms_num}} SMS!</nz-footer>
+  </nz-content>
+</nz-layout>
+

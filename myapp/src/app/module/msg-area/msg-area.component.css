@@ -1,0 +1,7 @@
+.msg button{
+  margin: 10px;
+}
+
+.msg textarea{
+  min-height: 222px;
+}

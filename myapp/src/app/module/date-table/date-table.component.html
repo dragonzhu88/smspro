@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="dataSet">
+  <thead>
+  <tr>
+    <th>Type</th>
+    <th>Peer Number</th>
+    <th>Message Body</th>
+    <th>Time</th>
+    <th>IP Address</th>
+    <th>MAC Address</th>
+    <th>Port</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{data.type}}</td>
+    <td>{{data.peerNo}}</td>
+    <td>{{data.msg}}</td>
+    <td>{{data.time}}</td>
+    <td>{{data.ipAddr}}</td>
+    <td>{{data.macAddr}}</td>
+    <td>{{data.port}}</td>
+  </tr>
+  </tbody>
+</nz-table>

@@ -1,0 +1,39 @@
+<div class="row msg">
+  <div class="ant-col-20 content">
+    <textarea rows="4" nz-input [(ngModel)]="inputValue"></textarea>
+  </div>
+
+  <div class="ant-col-4">
+
+    <div class="row">
+      <button nz-button nzType="default" (click)="showModal('sendSms')">Send SMS</button>
+    </div>
+    <div class="row">
+
+      <button nz-button nzType="default" (click)="showModal('sendUssd')">Send USSD</button>
+    </div>
+    <div class="row">
+
+      <button nz-button nzType="default" (click)="showModal('forward')">Forward</button>
+    </div>
+    <div class="row">
+
+      <button nz-button nzType="default" (click)="showModal('reply')">Reply</button>
+    </div>
+
+  </div>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Send Content" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <nz-input-group [nzSuffix]="suffixTemplate" [nzPrefix]="prefixTemplate" *ngIf="saveType != 'sendUssd'">
+    <input type="text" style="margin-bottom: 10px" nz-input placeholder="Enter tel phone." [(ngModel)]="telPhone">
+  </nz-input-group>
+  <ng-template #prefixTemplate><i nz-icon type="phone"></i></ng-template>
+  <ng-template #suffixTemplate><i nz-icon type="close-circle" (click)="telPhone=null" *ngIf="telPhone"></i></ng-template>
+
+  <nz-input-group [nzSuffix]="suffixTemplate2" [nzPrefix]="prefixTemplate2">
+    <textarea rows="4" nz-input  placeholder="Enter sms text." [(ngModel)]="smsText"></textarea>
+  </nz-input-group>
+  <ng-template #prefixTemplate2><i nz-icon type="edit"></i></ng-template>
+  <ng-template #suffixTemplate2><i nz-icon type="close-circle" (click)="smsText=null" *ngIf="smsText"></i></ng-template>
+</nz-modal>
